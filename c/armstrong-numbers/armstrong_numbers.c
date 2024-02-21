@@ -13,23 +13,19 @@ bool is_armstrong_number(){
     	count++;
         var = var/10;   
     }
-// caso de uma casa decimal
+    // caso de uma casa decimal
     if (count == 1)
         {
         return true;
         }
-    
-    int vetor[count], eq=0;
-    
+    int vetor[count], eq = 0;
     for(int i =0; i<count;i++){
-        vetor[i] = numberv%10;
-	    numberv = numberv/10;
-	    eq = eq + pow(vetor[i],count); 
+        vetor[i] = numberv % 10;
+	    numberv = numberv / 10;
+	    eq = eq + pow(vetor[i], count); 
 	}
     
-	if(eq == number){return true;}
-    else{return false;}
-
+	return (eq == number);
 }
 
 
