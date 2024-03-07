@@ -1,3 +1,3 @@
 # Exercism_Solutions
 
-My goal is to do one per  .
+My goal is to do one per day.
