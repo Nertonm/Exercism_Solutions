@@ -19,13 +19,17 @@ node_t *build_tree(int *tree_data, size_t tree_data_len){
                 node_t* treeEsq = (node_t*)malloc(sizeof(node_t));
                 treeEsq->data = tree_data[i];
                 aux->left = treeEsq;
-            } else {
+                treeEsq->left = NULL;
+                treeEsq->right = NULL;
+            } else {     
                  if (aux->data < tree_data[i]){
                     while (aux->right) 
                         aux = aux->right;
                     node_t* treeDir = (node_t*)malloc(sizeof(node_t));
                     treeDir->data = tree_data[i];
-                    aux->right = treeDir;    
+                    aux->right = treeDir;
+                    treeDir->left = NULL;
+                    treeDir->right = NULL;    
                     }
                 }
         }
@@ -33,17 +37,14 @@ node_t *build_tree(int *tree_data, size_t tree_data_len){
     }
     return NULL;
 }
-/*
-typedef struct node node_t;
-
-struct node {
-   node_t *right;
-   node_t *left;
-   int data;
-};
-*/
-
-void free_tree(node_t *tree);
+void free_tree(node_t *tree){
+    if (tree){
+        free_tree(tree->left);
+        free_tree(tree->right);
+        free(tree);
+    }
+    return;
+}
 int *sorted_data(node_t *tree);
 
 
