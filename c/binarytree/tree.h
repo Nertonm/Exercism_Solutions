@@ -1,3 +1,8 @@
+
+struct aluno{
+    int id;
+};
+
 typedef struct no No;
 typedef struct aluno Aluno;
 

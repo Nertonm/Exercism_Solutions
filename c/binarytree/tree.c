@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include "tree.h"
 
-struct aluno{
-    int id;
-};
-
 struct no{
     struct no *esq;
     Aluno dat;
@@ -21,8 +17,8 @@ No* criar(){
 
 int vazia(No* no){
     if (no)
-        return 0;
-    return 1;
+        return 1;
+    return 0;
 }
 
 int rmNo(No* no){
@@ -71,26 +67,35 @@ int Altura(No* no){
 
 int contNo(No* no){
     if (!no) 
-        return 1;
-    return (contNo(no->esq) + contNo(no->dir));
+        return 0;
+    return (contNo(no->esq) + contNo(no->dir)) + 1;
 }
 
 int inserirNo(No* no, Aluno newDat){
     if (!no)
         return 0;
-    No* ins = (No*)malloc(sizeof(No));
+    
+    
+
+    /* No* ins = (No*)malloc(sizeof(No));
     if (!ins)
         return 0;
     ins->dat = newDat;
     ins->esq = NULL;
     ins->dir = NULL;
-    if (!no)
-        no = ins;
-    No* aux = no, ant;
+    if (*no == NULL){
+        *no = ins;
+        return 1;
+    }
+    No* aux = no;
+    No* ant = aux;
     while(aux){
+        ant = aux;
         ((aux->dat.id > ins->dat.id) ? (aux = aux->esq) : (aux = aux->dir));
     }
-    ((aux->dat.id > ins->dat.id) ? (aux->esq = ins) : (aux->dir = ins));
+    ((ant->dat.id > ins->dat.id) ? (ant->esq = ins) : (ant->dir = ins));
+    return 1;
+    */
 }
 
 
