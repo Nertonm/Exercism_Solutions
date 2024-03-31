@@ -17,7 +17,7 @@ void displayMenu() {
     printf("Enter your choice: ");
 }
 int main(){
-    No* root;  // Initialize root to NULL
+    root* root;  // Initialize root to NULL
     int choice, data;
     do{
         displayMenu();
@@ -25,6 +25,7 @@ int main(){
         switch (choice) {
             case 1:
                 root = criar();
+                No* no = *root;
                 break;
             case 2:   
                 data = vazia(root); 
@@ -34,14 +35,14 @@ int main(){
                 break;
             case 4:
                 if (vazia(root)){
-                    preOrdem(root);
+                    preOrdem(no);
                     break;
                 }
                 printf("Invalid Tree");
                 break;
             case 5:
                 if (vazia(root)){
-                    posOrdem(root);
+                    posOrdem(no);
                     break;
                 }
                 printf("Invalid Tree");
@@ -51,14 +52,14 @@ int main(){
             case 7:
                 break;
             case 8:
-                data =  contNo(root); 
+                data =  contNo(no); 
                 printf("%i",data);
                 break;
             case 9:
                 Aluno info;
                 scanf("%i",&data);
                 info.id = data;
-                inserirNo(root,info);
+                inserirNo(no,info);
         } 
     }
     while (1);
