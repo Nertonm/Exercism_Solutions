@@ -32,6 +32,10 @@ int main(){
                 no = *raiz;
                 view(no);
                 break;
+            case 6:
+                scanf("%i",&dat);
+                deletarNo(raiz,dat); 
+                break;
         }
     }
     while(1);

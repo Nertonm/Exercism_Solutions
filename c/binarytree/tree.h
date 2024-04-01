@@ -13,3 +13,4 @@ int inserir(Raiz*, struct aluno);
 int preOrdem(No*);
 int altura(No*);
 void view(No*);
+void deletarNo(No**, int);

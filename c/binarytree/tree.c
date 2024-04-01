@@ -99,7 +99,13 @@ void deletarNo(No** no, int x){
     if (!(aux->esq && aux->dir)){
         aux = NULL;
         free(aux);   
+    }
+    if (aux->esq){
+        ant->esq = aux->esq;
     }  
+    if (aux->dir){
+        ant->dir = ant->dir;
+    }
 }
 
 
