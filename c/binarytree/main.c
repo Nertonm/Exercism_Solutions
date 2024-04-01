@@ -36,6 +36,18 @@ int main(){
                 scanf("%i",&dat);
                 deletarNo(raiz,dat); 
                 break;
+            case 7:
+                int aaa = strict(*raiz);
+                printf("%i",aaa);
+                break;
+            case 8:
+                dat = isBalanced(*raiz);
+                printf("%i",dat);
+                break;
+            case 9:
+                dat = contNo(*raiz);
+                printf("%i",dat);
+                break;
         }
     }
     while(1);

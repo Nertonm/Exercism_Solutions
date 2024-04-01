@@ -14,3 +14,6 @@ int preOrdem(No*);
 int altura(No*);
 void view(No*);
 void deletarNo(No**, int);
+int strict(No*);
+int isBalanced(No* raiz);
+int contNo(No* no);

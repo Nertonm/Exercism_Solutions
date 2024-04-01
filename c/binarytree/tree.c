@@ -82,34 +82,76 @@ void view(No* no){
 void deletarNo(No** no, int x){
     No* aux = *no;
     No* ant = aux;    
+    if (aux->dat.id == x)
+        return;
     while (aux){
-        ant = aux;
-        if (aux->dat.id == x){
-            if (!(aux->esq && aux->dir)){
-                aux = NULL;
-                free(aux);   
-            }
-            if (aux->esq){
-                ant->esq = aux->esq;
-            }  
-            if (aux->dir){
-                ant->dir = ant->dir;
-            }
-        }
-        if (aux->dat.id > x){
-            aux = aux->esq;
-        }
-        else if(aux->dat.id < x){
+        if (x > aux->dat.id){
+            ant = aux;
             aux = aux->dir;
         }
-        else 
-            return 0;
+        else if (x < aux->dat.id){
+            ant = aux;
+            aux = aux->esq;
+        }
+        else{
+            if (aux->esq && aux->dir){
+                No* tmp = aux->esq;
+                No* tmp2 = tmp;
+                while (tmp->dir){
+                    tmp2 = tmp;
+                    tmp = tmp->dir;
+                }
+                tmp2->dir = NULL;
+                if (ant->esq == aux){
+                    ant->esq = tmp;
+                } else {
+                    ant->dir = tmp;
+                }
+                tmp->dir = aux->dir;
+                return;
+
+            }
+            if (!(aux->esq && aux->dir)){
+                if (aux == ant->esq){
+                    ant->esq = NULL;
+                    free(aux);
+                    return;
+                }
+                ant->dir = NULL;
+                free(aux);
+                return;
+            }
+        }
     }
+    printf("Não encontrado");
+}
+
+int strict(No* raiz){
+    if (!raiz) 
+        return 1;
+    if (!raiz->esq && raiz->dir)
+        return 0;
+    if (raiz->esq && !raiz->dir)
+        return 0;
+    return strict(raiz->esq) && strict(raiz->dir);
+}
+
+int isBalanced(No* raiz){
+    if (!raiz)
+        return 1;
+    int dif = abs((altura(raiz->esq) - altura(raiz->dir)));
+    if (dif > 1)
+        return 0;
+    return (isBalanced(raiz->esq) && isBalanced(raiz->dir)); 
+
 }
 
 
-
-
+int contNo(No* no){
+    if (!no)
+        return 0;
+    return contNo(no->esq) + contNo(no->dir) + 1;
+}
 
 
 
