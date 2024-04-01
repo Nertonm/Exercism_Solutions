@@ -85,7 +85,16 @@ void deletarNo(No** no, int x){
     while (aux){
         ant = aux;
         if (aux->dat.id == x){
-            break;
+            if (!(aux->esq && aux->dir)){
+                aux = NULL;
+                free(aux);   
+            }
+            if (aux->esq){
+                ant->esq = aux->esq;
+            }  
+            if (aux->dir){
+                ant->dir = ant->dir;
+            }
         }
         if (aux->dat.id > x){
             aux = aux->esq;
@@ -95,16 +104,6 @@ void deletarNo(No** no, int x){
         }
         else 
             return 0;
-    }
-    if (!(aux->esq && aux->dir)){
-        aux = NULL;
-        free(aux);   
-    }
-    if (aux->esq){
-        ant->esq = aux->esq;
-    }  
-    if (aux->dir){
-        ant->dir = ant->dir;
     }
 }
 
