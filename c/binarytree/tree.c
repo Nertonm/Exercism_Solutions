@@ -153,6 +153,15 @@ int contNo(No* no){
     return contNo(no->esq) + contNo(no->dir) + 1;
 }
 
+int nivel(No* no, int n, int alt){
+    if(!no)
+        return 0;
+    int nivela = alt - n;
+    if (altura(no) == nivela)
+        printf("%i",no->dat.id); 
+    nivel(no->esq,n,alt);
+    nivel(no->dir,n,alt);
+}
 
 
 

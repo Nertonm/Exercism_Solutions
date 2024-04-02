@@ -17,3 +17,4 @@ void deletarNo(No**, int);
 int strict(No*);
 int isBalanced(No* raiz);
 int contNo(No* no);
+int nivel(No* no, int n, int altura);

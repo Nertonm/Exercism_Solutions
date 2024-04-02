@@ -45,8 +45,11 @@ int main(){
                 printf("%i",dat);
                 break;
             case 9:
-                dat = contNo(*raiz);
-                printf("%i",dat);
+                choice = altura(*raiz);
+                scanf("%i",&dat);
+                nivel(*raiz,dat,choice);
+                // dat = contNo(*raiz);
+               // printf("%i",dat);
                 break;
         }
     }
