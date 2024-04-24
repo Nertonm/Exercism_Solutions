@@ -45,6 +45,8 @@ void free_tree(node_t *tree){
     }
     return;
 }
-int *sorted_data(node_t *tree);
+int *sorted_data(node_t *tree){
+
+}
 
 
