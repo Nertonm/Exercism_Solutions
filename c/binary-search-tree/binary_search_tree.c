@@ -45,8 +45,19 @@ void free_tree(node_t *tree){
     }
     return;
 }
-int *sorted_data(node_t *tree){
-
+int size(node_t *tree){
+    if(!tree) return 0;
+    return 1 + size(tree->left) + size(tree->right)   
 }
-
+void  sorted(node_t *tree, int* vect){
+    if(tree->left) sorted(tree->left,(*vect)++);
+    vect = tree->data;
+    if(tree->right) sorted(tree->right,(*vect)++);
+}
+int* sorted_data(node_t *tree){
+    //int sizet = size(tree);
+    int *vect = malloc(sizeof(int));
+    sorted(tree, vect);
+    return vect;
+}
 
