@@ -1,0 +1,29 @@
+{
+  "authors": [
+    "vlzware"
+  ],
+  "contributors": [
+    "elyashiv",
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "binary_search_tree.c",
+      "binary_search_tree.h"
+    ],
+    "test": [
+      "test_binary_search_tree.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "source": "Josh Cheek",
+  "source_url": "https://twitter.com/josh_cheek"
+}
