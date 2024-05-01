@@ -2,13 +2,13 @@
 
 unsigned int sum_of_squares(unsigned int number){
     unsigned int num = 0;
-    for(unsigned int i = 1; i < number; i++)
-        num = num + i*i;
+    for(unsigned int i = 1; i <= number; i++)
+        num += i*i;
     return num;
 }
-unsigned int square_of_sum(unsigned int number)
+unsigned int square_of_sum(unsigned int number){
     unsigned int num = 0;
-    for(unsigned int i = 1; i < number; i++)
+    for(unsigned int i = 1; i <= number; i++)
         num += i;
     num = num*num;
     return num;
