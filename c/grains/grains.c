@@ -10,10 +10,7 @@ uint64_t square(uint8_t index){
 }
 
 uint64_t total(void){
-    uint64_t num = 1;
-    for (uint64_t i = 2; i <= 63; i++)
-        num = num * 2;   
-    return num;
+    return square(65) - 1;
 }
 
 
