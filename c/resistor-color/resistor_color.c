@@ -1,5 +1,5 @@
 #include "resistor_color.h"
 
-:dd
-
+colors();
+color_code
 
